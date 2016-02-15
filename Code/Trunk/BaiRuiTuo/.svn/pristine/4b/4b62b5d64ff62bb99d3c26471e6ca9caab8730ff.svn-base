@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14C109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="Rk2-bP-XJm">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Root View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_rootview" translatesAutoresizingMaskIntoConstraints="NO" id="QEP-2H-ysS">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZj-S2-Hft">
+                                <rect key="frame" x="610" y="150" width="250" height="64"/>
+                                <state key="normal" backgroundImage="btn_meeting1">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hxt-Ts-oou" kind="push" identifier="showHospital1" id="xOp-I7-Sma"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNV-Nk-cGz">
+                                <rect key="frame" x="164" y="390" width="250" height="64"/>
+                                <state key="normal" backgroundImage="btn_meeting3">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Csa-f1-TpR" kind="push" identifier="showMeeting" id="lTA-5f-jes"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tj-HQ-zGL">
+                                <rect key="frame" x="387" y="270" width="250" height="64"/>
+                                <state key="normal" backgroundImage="btn_meeting2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hxt-Ts-oou" kind="push" identifier="showHospital2" id="NYE-NT-RI8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nbp-xS-xdP"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="-1811"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="zvE-ya-NUJ">
+            <objects>
+                <viewController id="oO3-O5-6JD" customClass="LoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DWY-n8-o8S"/>
+                        <viewControllerLayoutGuide type="bottom" id="39z-oK-Aeh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xjG-5h-1px">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_login" translatesAutoresizingMaskIntoConstraints="NO" id="sCo-OV-Gb8">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="768" id="Hyl-QO-mpk"/>
+                                    <constraint firstAttribute="width" constant="1024" id="Nhq-LA-Ixn"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="用户名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ed9-dj-IRR">
+                                <rect key="frame" x="420" y="176" width="240" height="30"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-23-SN3">
+                                <rect key="frame" x="420" y="251" width="240" height="30"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZf-oq-wPX">
+                                <rect key="frame" x="330" y="300" width="120" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="记住密码" image="img_unchecked">
+                                    <color key="titleColor" red="0.30980392156862746" green="0.1764705882352941" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" image="img_checked"/>
+                                <connections>
+                                    <action selector="rememberButtonClicked:" destination="oO3-O5-6JD" eventType="touchUpInside" id="X8i-eR-hNq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Q6-xd-9ZZ">
+                                <rect key="frame" x="400" y="355" width="225" height="58"/>
+                                <state key="normal" image="btn_login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonClicked:" destination="oO3-O5-6JD" eventType="touchUpInside" id="UCw-ZO-WWa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="sCo-OV-Gb8" firstAttribute="top" secondItem="xjG-5h-1px" secondAttribute="topMargin" id="WNb-gp-RZx"/>
+                            <constraint firstItem="sCo-OV-Gb8" firstAttribute="leading" secondItem="xjG-5h-1px" secondAttribute="leadingMargin" constant="-20" id="fK2-9r-kVC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="BrN-Hm-Wel"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="passwordField" destination="xnl-23-SN3" id="zVY-Pp-8he"/>
+                        <outlet property="rememberButton" destination="MZf-oq-wPX" id="23w-Qs-qNl"/>
+                        <outlet property="usernameField" destination="Ed9-dj-IRR" id="Fc2-26-4Rc"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="showRootView" customClass="PushNoAnimationSegue" id="qkn-pQ-pfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c1H-C2-udQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="142" y="-1811"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ldb-Mh-ybh">
+            <objects>
+                <navigationController id="Rk2-bP-XJm" customClass="BRTNavigationController" sceneMemberID="viewController">
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uPY-xr-LVO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oO3-O5-6JD" kind="relationship" relationship="rootViewController" id="aMC-OB-whF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gI-gm-tV5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1034" y="-1811"/>
+        </scene>
+        <!--Hospital Table View Controller-->
+        <scene sceneID="Web-QQ-thg">
+            <objects>
+                <viewController id="hxt-Ts-oou" customClass="HospitalTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Bl-Gl-1dr"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMw-ZH-P2q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Aij-yC-k5j">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital" translatesAutoresizingMaskIntoConstraints="NO" id="AVG-7X-en6">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital_tableview" translatesAutoresizingMaskIntoConstraints="NO" id="I87-IK-LlK">
+                                <rect key="frame" x="160" y="108" width="707" height="545"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wwO-Lz-f91">
+                                <rect key="frame" x="190" y="155" width="640" height="493"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="hxt-Ts-oou" id="0iE-Nj-IJf"/>
+                                    <outlet property="delegate" destination="hxt-Ts-oou" id="1cS-CM-hhM"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="输入医院名字" translatesAutoresizingMaskIntoConstraints="NO" id="6xe-Sh-oMR">
+                                <rect key="frame" x="163" y="111" width="700" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hxt-Ts-oou" id="zO6-7R-9in"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jkl-bF-HqD"/>
+                    <connections>
+                        <outlet property="searchBar" destination="6xe-Sh-oMR" id="uOo-ab-pSD"/>
+                        <outlet property="tableView" destination="wwO-Lz-f91" id="rXW-F4-Kbl"/>
+                        <segue destination="Csa-f1-TpR" kind="push" identifier="showMeeting" id="zBh-qd-btM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9DV-g6-ReO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="-1811"/>
+        </scene>
+        <!--Meeting View Controller-->
+        <scene sceneID="nj0-Wz-Rqv">
+            <objects>
+                <viewController id="Csa-f1-TpR" customClass="MeetingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="l6F-H5-vC1"/>
+                        <viewControllerLayoutGuide type="bottom" id="yqP-Um-2c5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4B8-IY-9CQ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital" translatesAutoresizingMaskIntoConstraints="NO" id="YQm-V2-9BT">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital_tableview" translatesAutoresizingMaskIntoConstraints="NO" id="sUp-L0-CLO">
+                                <rect key="frame" x="48" y="112" width="929" height="590"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ORr-aj-9YM">
+                                <rect key="frame" x="52" y="115" width="920" height="44"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="会议单号" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OGp-3n-8dq">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="会议类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soc-le-iKX">
+                                        <rect key="frame" x="120" y="0.0" width="80" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="会议时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRE-8g-msf">
+                                        <rect key="frame" x="200" y="0.0" width="100" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="会议主题" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1h-5m-UNP">
+                                        <rect key="frame" x="300" y="0.0" width="260" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="科室" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weo-sG-vWH">
+                                        <rect key="frame" x="560" y="0.0" width="100" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="状态" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UbI-C6-iJc">
+                                        <rect key="frame" x="660" y="0.0" width="120" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="操作" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4T-fw-R9R">
+                                        <rect key="frame" x="780" y="0.0" width="140" height="44"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="tvo-TN-WVh">
+                                <rect key="frame" x="52" y="159" width="920" height="538"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MeetingCell" id="wuo-x8-KCo" customClass="MeetingViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wuo-x8-KCo" id="blf-0D-v7h">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="121212333" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-7J-4m1">
+                                                    <rect key="frame" x="10" y="0.0" width="100" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="城市会" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mT6-Md-JXK">
+                                                    <rect key="frame" x="120" y="0.0" width="80" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2015-01-25" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzs-15-Pwe">
+                                                    <rect key="frame" x="200" y="0.0" width="100" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="北京协和医院骨科医疗工作会议" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="8Pk-E9-m8G">
+                                                    <rect key="frame" x="300" y="0.0" width="260" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="骨科" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFi-e4-ivg">
+                                                    <rect key="frame" x="560" y="0.0" width="100" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OPERA中已取消" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qoo-de-AsS">
+                                                    <rect key="frame" x="660" y="0.0" width="120" height="44"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                    <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5s0-Ni-zeC">
+                                                    <rect key="frame" x="780" y="0.0" width="140" height="44"/>
+                                                    <subviews>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q36-x2-M5M">
+                                                            <rect key="frame" x="35" y="7" width="70" height="30"/>
+                                                            <state key="normal" backgroundImage="btn_review_yes">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="disabled" backgroundImage="btn_review_no"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Roz-lW-DKj">
+                                                            <rect key="frame" x="15" y="7" width="55" height="30"/>
+                                                            <state key="normal" backgroundImage="btn_upload">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="selected" backgroundImage="btn_start"/>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hda-Wh-0QR">
+                                                            <rect key="frame" x="70" y="7" width="55" height="30"/>
+                                                            <state key="normal" backgroundImage="btn_review_right">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                            <state key="selected" backgroundImage="btn_cancel"/>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="centerButton" destination="q36-x2-M5M" id="woN-sT-F20"/>
+                                            <outlet property="dateLabel" destination="dzs-15-Pwe" id="asJ-k1-82N"/>
+                                            <outlet property="leftButton" destination="Roz-lW-DKj" id="Hyd-wX-smQ"/>
+                                            <outlet property="nameLabel" destination="8Pk-E9-m8G" id="IqJ-zW-Hn7"/>
+                                            <outlet property="numberLabel" destination="1nP-7J-4m1" id="WPe-A7-Nfv"/>
+                                            <outlet property="officeLabel" destination="sFi-e4-ivg" id="UAD-rT-cxa"/>
+                                            <outlet property="operationView" destination="5s0-Ni-zeC" id="cKe-f1-9Gb"/>
+                                            <outlet property="rightButton" destination="Hda-Wh-0QR" id="UFm-VF-1Jm"/>
+                                            <outlet property="stateLabel" destination="qoo-de-AsS" id="8oM-px-2Co"/>
+                                            <outlet property="typeLabel" destination="mT6-Md-JXK" id="aRG-03-JgD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Csa-f1-TpR" id="UCZ-I9-c69"/>
+                                    <outlet property="delegate" destination="Csa-f1-TpR" id="2aP-Fr-gam"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ji2-1x-WfW"/>
+                    <connections>
+                        <outlet property="tableView" destination="tvo-TN-WVh" id="y9h-k5-Cyu"/>
+                        <segue destination="muf-t2-XxK" kind="push" identifier="showMeetingDetail" id="Oak-Lh-hdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eRM-KD-gAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1256" y="-902"/>
+        </scene>
+        <!--Meeting Detail View Controller-->
+        <scene sceneID="ZxR-JW-4hd">
+            <objects>
+                <viewController id="muf-t2-XxK" customClass="MeetingDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ovM-fH-naQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="EtN-Uk-EXE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aA7-9c-cKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital" translatesAutoresizingMaskIntoConstraints="NO" id="RKz-hj-bNY">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TDL-12-joU" customClass="MeetingDetailButton">
+                                <rect key="frame" x="172" y="130" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="会前照片" backgroundImage="img_folder1">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="rmi-HM-pP9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZA5-N8-OiC" customClass="MeetingDetailButton">
+                                <rect key="frame" x="415" y="130" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="会中照片" backgroundImage="img_folder2">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="b37-Px-QFF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVH-YQ-yXc" customClass="MeetingDetailButton">
+                                <rect key="frame" x="658" y="130" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="会后照片" backgroundImage="img_folder3">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="qVS-fV-MhG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-uJ-tT9" customClass="MeetingDetailButton">
+                                <rect key="frame" x="293" y="360" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="车辆照片" backgroundImage="img_folder5">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="tGw-o6-ubn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-Bd-FlT" customClass="MeetingDetailButton">
+                                <rect key="frame" x="50" y="360" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="茶歇照片" backgroundImage="img_folder4">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="BTj-Cm-PKO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-tM-Pdi" customClass="MeetingDetailButton">
+                                <rect key="frame" x="536" y="360" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="餐饮照片" backgroundImage="img_folder6">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="oMW-WP-jR8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-lP-pbv" customClass="MeetingDetailButton">
+                                <rect key="frame" x="779" y="360" width="195" height="166"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="其他照片" backgroundImage="img_folder7">
+                                    <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="nzZ-US-dv8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="温馨提示：" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGb-Vg-D27">
+                                <rect key="frame" x="472" y="652" width="80" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.92549019610000005" green="0.0" blue="0.54901960780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-DQ-JNt">
+                                <rect key="frame" x="312" y="680" width="400" height="40"/>
+                                <string key="text">会前、会中、会后至少拍摄2张照片，
+其他内容请根据会议需要拍摄，建议最少拍摄2张</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BmH-8Y-bgf"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="afterMeetingBtn" destination="UVH-YQ-yXc" id="s8F-vF-FgU"/>
+                        <outlet property="beforeMeetingBtn" destination="TDL-12-joU" id="cBO-Ac-hu7"/>
+                        <outlet property="carBtn" destination="wyK-uJ-tT9" id="uVZ-AE-cEr"/>
+                        <outlet property="diningBtn" destination="qWF-tM-Pdi" id="1MQ-3q-0bE"/>
+                        <outlet property="duringMeetingBtn" destination="ZA5-N8-OiC" id="Vmb-Bp-lD0"/>
+                        <outlet property="othersBtn" destination="iJe-lP-pbv" id="Sft-OJ-1tZ"/>
+                        <outlet property="teaBtn" destination="9IO-Bd-FlT" id="tnU-eM-cg5"/>
+                        <segue destination="vPZ-Bo-bXF" kind="push" identifier="showImageView" id="ODY-Js-Sop"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SCy-jW-4nX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2349" y="-902"/>
+        </scene>
+        <!--Image Table View Controller-->
+        <scene sceneID="Z2I-IX-aQP">
+            <objects>
+                <viewController id="vPZ-Bo-bXF" customClass="ImageTableViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rtu-kY-Hsg"/>
+                        <viewControllerLayoutGuide type="bottom" id="uOa-zP-hCE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zXK-Nj-K5Z">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital" translatesAutoresizingMaskIntoConstraints="NO" id="N4k-qL-Ueu">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital_tableview" translatesAutoresizingMaskIntoConstraints="NO" id="jQ2-8H-H3x">
+                                <rect key="frame" x="47" y="106" width="930" height="620"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0张照片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWg-iM-lTr">
+                                <rect key="frame" x="452" y="640" width="120" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请至少拍摄2张照片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXU-MF-vca">
+                                <rect key="frame" x="312" y="675" width="400" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eDu-O0-YI4">
+                                <rect key="frame" x="62" y="114" width="900" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageCell" rowHeight="130" id="nKk-lO-ChS" customClass="ImageViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nKk-lO-ChS" id="yBA-0Z-mAQ">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView tag="101" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ydR-aX-cby">
+                                                    <rect key="frame" x="0.0" y="5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView tag="102" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XyV-Db-als">
+                                                    <rect key="frame" x="130" y="5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView tag="103" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-ta-Xsn">
+                                                    <rect key="frame" x="260" y="8" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView tag="104" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kt4-ys-Dmr">
+                                                    <rect key="frame" x="390" y="5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView tag="105" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bbM-i4-kVP">
+                                                    <rect key="frame" x="520" y="5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView tag="106" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJ7-GY-OOt">
+                                                    <rect key="frame" x="650" y="5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <imageView tag="107" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K3r-VP-wf2">
+                                                    <rect key="frame" x="780" y="5" width="120" height="120"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outletCollection property="imageViews" destination="ydR-aX-cby" id="16O-cE-cdf"/>
+                                            <outletCollection property="imageViews" destination="XyV-Db-als" id="2LE-lK-lP2"/>
+                                            <outletCollection property="imageViews" destination="p9L-ta-Xsn" id="hOO-Pv-32A"/>
+                                            <outletCollection property="imageViews" destination="Kt4-ys-Dmr" id="Wg5-GU-XAn"/>
+                                            <outletCollection property="imageViews" destination="bbM-i4-kVP" id="f4u-ed-nJp"/>
+                                            <outletCollection property="imageViews" destination="bJ7-GY-OOt" id="6Dv-7r-SlM"/>
+                                            <outletCollection property="imageViews" destination="K3r-VP-wf2" id="a6j-bN-5jY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="vPZ-Bo-bXF" id="FLx-Vc-HfF"/>
+                                    <outlet property="delegate" destination="vPZ-Bo-bXF" id="QPp-ix-Xzz"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WYk-IU-FNN"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="countLabel" destination="zWg-iM-lTr" id="1gP-MZ-nPk"/>
+                        <outlet property="tableView" destination="eDu-O0-YI4" id="Jno-D3-olH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffb-yQ-Ur9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3455" y="-902"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg_hospital" width="1024" height="768"/>
+        <image name="bg_hospital_tableview" width="707" height="545"/>
+        <image name="bg_login" width="1024" height="768"/>
+        <image name="bg_rootview" width="1024" height="768"/>
+        <image name="btn_cancel" width="55" height="30"/>
+        <image name="btn_login" width="225" height="58"/>
+        <image name="btn_meeting1" width="245" height="63"/>
+        <image name="btn_meeting2" width="245" height="63"/>
+        <image name="btn_meeting3" width="245" height="64"/>
+        <image name="btn_review_no" width="70" height="30"/>
+        <image name="btn_review_right" width="55" height="30"/>
+        <image name="btn_review_yes" width="70" height="30"/>
+        <image name="btn_start" width="55" height="30"/>
+        <image name="btn_upload" width="55" height="30"/>
+        <image name="img_checked" width="22" height="22"/>
+        <image name="img_folder1" width="195" height="166"/>
+        <image name="img_folder2" width="195" height="166"/>
+        <image name="img_folder3" width="195" height="166"/>
+        <image name="img_folder4" width="195" height="166"/>
+        <image name="img_folder5" width="195" height="166"/>
+        <image name="img_folder6" width="195" height="166"/>
+        <image name="img_folder7" width="195" height="166"/>
+        <image name="img_unchecked" width="22" height="22"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="lTA-5f-jes"/>
+        <segue reference="xOp-I7-Sma"/>
+    </inferredMetricsTieBreakers>
+</document>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4C1FBFF7-83FF-43C0-AE14-480967DCC615</string>
+	<key>IDESourceControlProjectName</key>
+	<string>BaiRuiTuo</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>d67bb186-07a8-bb42-9463-aa84acc78bf8++7666</key>
+		<string>http://192.168.8.3/svn/ios_dev/Bayer/BaiRuiTuo/BaiRuiTuo</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>BaiRuiTuo.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>d67bb186-07a8-bb42-9463-aa84acc78bf8++7666</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>d67bb186-07a8-bb42-9463-aa84acc78bf8++7666</key>
+		<string>http://192.168.8.3/svn/ios_dev</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>http://192.168.8.3/svn/ios_dev/Bayer/BaiRuiTuo/BaiRuiTuo/BaiRuiTuo.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>d67bb186-07a8-bb42-9463-aa84acc78bf8++7666</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>d67bb186-07a8-bb42-9463-aa84acc78bf8++7666</string>
+			<key>IDESourceControlWCCName</key>
+			<string>BaiRuiTuo</string>
+		</dict>
+	</array>
+</dict>
+</plist>

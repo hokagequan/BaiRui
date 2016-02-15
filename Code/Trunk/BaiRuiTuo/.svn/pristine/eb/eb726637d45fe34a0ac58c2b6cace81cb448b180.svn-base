@@ -1,0 +1,17 @@
+//
+//  Define.h
+//  BaiRuiTuo
+//
+//  Created by kingyee on 15/1/14.
+//  Copyright (c) 2015年 Kingyee. All rights reserved.
+//
+
+#ifndef BaiRuiTuo_Define_h
+#define BaiRuiTuo_Define_h
+
+#define kAppMainColor [UIColor colorWithRed:79/255.0 green:45/255.0 blue:127/255.0 alpha:1]
+#define kAppPinkColor [UIColor colorWithRed:236/255.0 green:0 blue:140/255.0 alpha:1]
+#define kAppGrayColor [UIColor colorWithRed:128/255.0 green:127/255.0 blue:131/255.0 alpha:1]
+
+
+#endif
