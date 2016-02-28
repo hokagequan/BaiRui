@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B45C07BE1A5E507B00BFEEE7"
-               BuildableName = "EventOptimizer.app"
+               BuildableName = "BayPhoto.app"
                BlueprintName = "BaiRuiTuo"
                ReferencedContainer = "container:BaiRuiTuo.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B45C07BE1A5E507B00BFEEE7"
-            BuildableName = "EventOptimizer.app"
+            BuildableName = "BayPhoto.app"
             BlueprintName = "BaiRuiTuo"
             ReferencedContainer = "container:BaiRuiTuo.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B45C07BE1A5E507B00BFEEE7"
-            BuildableName = "EventOptimizer.app"
+            BuildableName = "BayPhoto.app"
             BlueprintName = "BaiRuiTuo"
             ReferencedContainer = "container:BaiRuiTuo.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B45C07BE1A5E507B00BFEEE7"
-            BuildableName = "EventOptimizer.app"
+            BuildableName = "BayPhoto.app"
             BlueprintName = "BaiRuiTuo"
             ReferencedContainer = "container:BaiRuiTuo.xcodeproj">
          </BuildableReference>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104A44111C7F3A0700CE4029 /* kk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104A44101C7F3A0700CE4029 /* kk.plist */; };
 		B424AC7C1A78DB4B009239F6 /* UIImage+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = B424AC7B1A78DB4B009239F6 /* UIImage+Date.m */; };
 		B4442AB81A6E377E00515A06 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4442AB31A6E377E00515A06 /* SVIndefiniteAnimatedView.m */; };
 		B4442AB91A6E377E00515A06 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4442AB51A6E377E00515A06 /* SVProgressHUD.bundle */; };
@@ -141,6 +142,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		104A44101C7F3A0700CE4029 /* kk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = kk.plist; sourceTree = "<group>"; };
 		B424AC7A1A78DB4B009239F6 /* UIImage+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Date.h"; sourceTree = "<group>"; };
 		B424AC7B1A78DB4B009239F6 /* UIImage+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Date.m"; sourceTree = "<group>"; };
 		B4442AB21A6E377E00515A06 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -176,7 +178,7 @@
 		B459AC831A7F178800DBB51B /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		B459AC841A7F178800DBB51B /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		B459AC851A7F178800DBB51B /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
-		B45C07BF1A5E507B00BFEEE7 /* EventOptimizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EventOptimizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B45C07BF1A5E507B00BFEEE7 /* BayPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BayPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B45C07C31A5E507B00BFEEE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B45C07C41A5E507B00BFEEE7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B45C07CD1A5E507B00BFEEE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -365,7 +367,7 @@
 		B45C07C01A5E507B00BFEEE7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B45C07BF1A5E507B00BFEEE7 /* EventOptimizer.app */,
+				B45C07BF1A5E507B00BFEEE7 /* BayPhoto.app */,
 				B45C07D81A5E507B00BFEEE7 /* BaiRuiTuoTests.xctest */,
 				B45511121A8DD27B0086FF5C /* BaiRuiTuo.app */,
 			);
@@ -380,6 +382,7 @@
 				B45C07CC1A5E507B00BFEEE7 /* Main.storyboard */,
 				B45C07CF1A5E507B00BFEEE7 /* Images.xcassets */,
 				B45C07C21A5E507B00BFEEE7 /* Supporting Files */,
+				104A44101C7F3A0700CE4029 /* kk.plist */,
 			);
 			path = BaiRuiTuo;
 			sourceTree = "<group>";
@@ -584,7 +587,7 @@
 			);
 			name = BaiRuiTuo;
 			productName = BaiRuiTuo;
-			productReference = B45C07BF1A5E507B00BFEEE7 /* EventOptimizer.app */;
+			productReference = B45C07BF1A5E507B00BFEEE7 /* BayPhoto.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B45C07D71A5E507B00BFEEE7 /* BaiRuiTuoTests */ = {
@@ -616,7 +619,7 @@
 				TargetAttributes = {
 					B45C07BE1A5E507B00BFEEE7 = {
 						CreatedOnToolsVersion = 6.1;
-						DevelopmentTeam = 6K6A2N2537;
+						DevelopmentTeam = MP54KL6JUN;
 					};
 					B45C07D71A5E507B00BFEEE7 = {
 						CreatedOnToolsVersion = 6.1;
@@ -670,6 +673,7 @@
 				B4442AB91A6E377E00515A06 /* SVProgressHUD.bundle in Resources */,
 				B45C07D01A5E507B00BFEEE7 /* Images.xcassets in Resources */,
 				B4A9B26F1A68A952001B2D08 /* brt_data.sqlite in Resources */,
+				104A44111C7F3A0700CE4029 /* kk.plist in Resources */,
 				B4442B0C1A71F53200515A06 /* meeting.txt in Resources */,
 				B4831EC71A67649F002A587A /* BRTAlertViewController.xib in Resources */,
 			);
@@ -949,6 +953,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = BaiRuiTuo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -957,7 +962,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiRuiTuo/Classes/BaiduMobStat",
 				);
-				PRODUCT_NAME = EventOptimizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eading.bailepai;
+				PRODUCT_NAME = BayPhoto;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -969,6 +975,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = BaiRuiTuo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -976,7 +983,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiRuiTuo/Classes/BaiduMobStat",
 				);
-				PRODUCT_NAME = EventOptimizer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eading.bailepai;
+				PRODUCT_NAME = BayPhoto;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

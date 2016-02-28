@@ -13,4 +13,6 @@
 
 @interface BRTViewController : UIViewController
 
+- (void)clickBack:(id)sender;
+
 @end

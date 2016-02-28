@@ -38,15 +38,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // QCW 1.4 FIX
+    self.meetingType = BRTOfficeMeeting;
+    self.title = @"医院会议列表";
+    self.navigationController.navigationBarHidden = NO;
+    
     self.alerViewCtrl = [[BRTAlertViewController alloc] init];
 //    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"MeetingCell"];
     // Do any additional setup after loading the view.
     self.tableView.rowHeight = 44.0f;
     
     NSMutableArray *array = [[BRTMeetingManager sharedManager] loadMeetingList:self.meetingType];
-    self.meetings = array;
+    // QCW 1.4 FIX
+    self.meetings = [self filterdArray:array];
     
-    [self loadAllMeeting];
+    // FIXME: Test
+//    [self loadAllMeeting];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -65,6 +72,16 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// QCW 1.4 FIX
+- (NSMutableArray *)filterdArray:(NSMutableArray *)array {
+    [array filterUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(id  _Nonnull evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+        BRTMeetingModel *meeting = (BRTMeetingModel *)evaluatedObject;
+        return ([meeting.meetingState integerValue] != CancelByAppState && [meeting.meetingState integerValue] != ExpiredState && [meeting.meetingState integerValue] != CancelByServerState);
+    }]];
+    
+    return array;
 }
 
 - (void)showMeetingDetail:(BRTMeetingModel*)meeting {
@@ -132,6 +149,7 @@
 //    if (hasGotten == YES) {
 //        return;
 //    }
+    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSString *username = [ud objectForKey:kBRTUsernameKey];
     NSString *urlString = [kBRTOPERAServerURL stringByAppendingPathComponent:@"Event.aspx"];
@@ -156,7 +174,8 @@
                 NSArray *array = [dict objectForKey:@"Arguments"];
                 [meetingMan updateMeetingList:array];
                 NSMutableArray *newArray = [meetingMan loadMeetingList:blockSelf.meetingType];
-                blockSelf.meetings = newArray;
+                // QCW 1.4 FIX
+                blockSelf.meetings = [self filterdArray:newArray];
                 [blockSelf.tableView reloadData];
 //                hasGotten = YES;
             }
@@ -283,6 +302,7 @@
             [self.alerViewCtrl addActionWithHandler:^{
                 meetingModel.meetingState = @(CancelByAppState);
                 [blockMeetingMan updateValue:@(CancelByAppState) forKey:kBRTMeetingStateKey withMeetingID:meetingModel.meetingID];
+                [blockSelf.meetings removeObject:meetingModel];
                 [blockSelf.tableView reloadData];
             }];
             [self.navigationController.view addSubview:self.alerViewCtrl.view];

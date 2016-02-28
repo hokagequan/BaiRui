@@ -121,9 +121,9 @@
 
 - (void)deleteButtonClicked
 {
-    // 2015-04-02, 会前和会后照片不得少于2张
+    // 2015-04-02, 会前和会后照片不得少于1张
     if (self.mutableImages.count == self.minImageCount) {
-        [SVProgressHUD showInfoWithStatus:@"此文件夹照片不得少于2张"];
+        [SVProgressHUD showInfoWithStatus:@"此文件夹照片不得少于1张"];
         return;
     }
     self.alerViewCtrl.message = @"删除照片后无法恢复，请确认是否删除！";

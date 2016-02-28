@@ -10,7 +10,7 @@
 #import "BRTMeetingDetailModel.h"
 
 typedef NS_ENUM(NSUInteger, BRTMeetingState) {
-    BeforeMeetingState,
+    BeforeMeetingState = 0,
     InMeetingState,
     AfterMeetingState,
     UploadedState,

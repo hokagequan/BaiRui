@@ -70,16 +70,16 @@
     self.othersBtn.countLabel.text = [NSString stringWithFormat:@"%@张", @(self.meetingDetail.otherImages.count)];
     
     //如果会前照片数量不足，不允许拍会中会后照片
-    if (self.meetingDetail.beforeMeetingImages.count >= 2) {
-        self.duringMeetingBtn.enabled = YES;
-        self.afterMeetingBtn.enabled = YES;
-        self.beforeMeetingBtn.cameraButton.enabled = NO;
-    }
-    else {
-        self.duringMeetingBtn.enabled = NO;
-        self.afterMeetingBtn.enabled = NO;
-//        self.beforeMeetingBtn.cameraButton.enabled = YES;
-    }
+//    if (self.meetingDetail.beforeMeetingImages.count >= 1) {
+//        self.duringMeetingBtn.enabled = YES;
+//        self.afterMeetingBtn.enabled = YES;
+////        self.beforeMeetingBtn.cameraButton.enabled = NO;
+//    }
+//    else {
+//        self.duringMeetingBtn.enabled = NO;
+//        self.afterMeetingBtn.enabled = NO;
+////        self.beforeMeetingBtn.cameraButton.enabled = YES;
+//    }
     // 2015-04-01, 会中照片不马上锁定
 //    //如果会中照片不够2张，不允许拍会后照片
 //    if (self.meetingDetail.inMeetingImages.count >= 2) {
@@ -90,10 +90,10 @@
 //        self.afterMeetingBtn.enabled = NO;
 ////        self.duringMeetingBtn.cameraButton.enabled = YES;
 //    }
-    //如果会后照片拍够2张，锁定会中会后照片拍照功能
-    if (self.meetingDetail.afterMeetingImages.count >= 2) {
-        self.afterMeetingBtn.cameraButton.enabled = NO;
-        self.duringMeetingBtn.cameraButton.enabled = NO;
+    //如果会后照片拍够1张，锁定会中会后照片拍照功能
+    if (self.meetingDetail.afterMeetingImages.count >= 1) {
+//        self.afterMeetingBtn.cameraButton.enabled = NO;
+//        self.duringMeetingBtn.cameraButton.enabled = NO;
     }
     else {
 //        self.afterMeetingBtn.cameraButton.enabled = YES;
@@ -131,10 +131,11 @@
         if (currentMeeting.beginTime == nil) {
             self.alerViewCtrl.message = @"此文件夹为会前照片，请提前5-10分钟拍照，请确认是否拍照！";
             __block MeetingDetailViewController *blockSelf = self;
-            [self.alerViewCtrl addActionWithHandler:^{
-                [blockSelf performSegueWithIdentifier:@"showImageView" sender:blockSelf.selectedButton];
-            }];
-            [self.navigationController.view addSubview:self.alerViewCtrl.view];
+//            [self.alerViewCtrl addActionWithHandler:^{
+//                [blockSelf performSegueWithIdentifier:@"showImageView" sender:blockSelf.selectedButton];
+//            }];
+//            [self.navigationController.view addSubview:self.alerViewCtrl.view];
+            [blockSelf performSegueWithIdentifier:@"showImageView" sender:blockSelf.selectedButton];
             return;
         }
     }
@@ -143,16 +144,25 @@
         if (currentMeeting.endTime == nil) {
             self.alerViewCtrl.message = @"此文件夹为会后照片，请在会议结束后拍摄，拍摄完成后会前、会后文件夹将被锁定，请确认是否拍照！";
             __block MeetingDetailViewController *blockSelf = self;
-            [self.alerViewCtrl addActionWithHandler:^{
-                [blockSelf performSegueWithIdentifier:@"showImageView" sender:blockSelf.selectedButton];
-            }];
-            [self.navigationController.view addSubview:self.alerViewCtrl.view];
+//            [self.alerViewCtrl addActionWithHandler:^{
+//                [blockSelf performSegueWithIdentifier:@"showImageView" sender:blockSelf.selectedButton];
+//            }];
+//            [self.navigationController.view addSubview:self.alerViewCtrl.view];
+             [blockSelf performSegueWithIdentifier:@"showImageView" sender:blockSelf.selectedButton];
             return;
         }
     }
     [self performSegueWithIdentifier:@"showImageView" sender:sender];
 }
 
+- (void)clickBack:(id)sender {
+    if (self.meetingDetail.beforeMeetingImages.count < 1) {
+        [SVProgressHUD showInfoWithStatus:@"全景照片文件夹照片不得少于1张"];
+        return;
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

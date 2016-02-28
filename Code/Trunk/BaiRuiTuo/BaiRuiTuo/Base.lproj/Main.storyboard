@@ -15,7 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_rootview" translatesAutoresizingMaskIntoConstraints="NO" id="QEP-2H-ysS">
@@ -58,7 +58,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="-1811"/>
+            <point key="canvasLocation" x="1278" y="-2913"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="zvE-ya-NUJ">
@@ -127,7 +127,7 @@
                         <outlet property="passwordField" destination="xnl-23-SN3" id="zVY-Pp-8he"/>
                         <outlet property="rememberButton" destination="MZf-oq-wPX" id="23w-Qs-qNl"/>
                         <outlet property="usernameField" destination="Ed9-dj-IRR" id="Fc2-26-4Rc"/>
-                        <segue destination="BYZ-38-t0r" kind="custom" identifier="showRootView" customClass="PushNoAnimationSegue" id="qkn-pQ-pfE"/>
+                        <segue destination="Csa-f1-TpR" kind="custom" identifier="showRootView" customClass="PushNoAnimationSegue" id="Ug2-KA-c4c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c1H-C2-udQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -165,7 +165,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dMw-ZH-P2q"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Aij-yC-k5j">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital" translatesAutoresizingMaskIntoConstraints="NO" id="AVG-7X-en6">
@@ -174,7 +174,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_hospital_tableview" translatesAutoresizingMaskIntoConstraints="NO" id="I87-IK-LlK">
                                 <rect key="frame" x="160" y="108" width="707" height="545"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wwO-Lz-f91">
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wwO-Lz-f91">
                                 <rect key="frame" x="190" y="155" width="640" height="493"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" red="0.92549019607843142" green="0.0" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
@@ -202,7 +202,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DV-g6-ReO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2349" y="-1811"/>
+            <point key="canvasLocation" x="1256" y="-1811"/>
         </scene>
         <!--Meeting View Controller-->
         <scene sceneID="nj0-Wz-Rqv">
@@ -380,12 +380,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRM-KD-gAu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1256" y="-902"/>
+            <point key="canvasLocation" x="1256" y="-784"/>
         </scene>
         <!--Meeting Detail View Controller-->
         <scene sceneID="ZxR-JW-4hd">
             <objects>
-                <viewController id="muf-t2-XxK" customClass="MeetingDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MeetingDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="muf-t2-XxK" customClass="MeetingDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ovM-fH-naQ"/>
                         <viewControllerLayoutGuide type="bottom" id="EtN-Uk-EXE"/>
@@ -402,7 +402,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="会前照片" backgroundImage="img_folder1">
+                                <state key="normal" title="全景照片" backgroundImage="img_folder1">
                                     <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -415,7 +415,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="120" minY="50" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="会中照片" backgroundImage="img_folder2">
+                                <state key="normal" title="讲者照片" backgroundImage="img_folder2">
                                     <color key="titleColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -423,7 +423,7 @@
                                     <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="b37-Px-QFF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVH-YQ-yXc" customClass="MeetingDetailButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVH-YQ-yXc" customClass="MeetingDetailButton">
                                 <rect key="frame" x="658" y="130" width="195" height="166"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
@@ -436,7 +436,7 @@
                                     <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="qVS-fV-MhG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-uJ-tT9" customClass="MeetingDetailButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wyK-uJ-tT9" customClass="MeetingDetailButton">
                                 <rect key="frame" x="293" y="360" width="195" height="166"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
@@ -449,7 +449,7 @@
                                     <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="tGw-o6-ubn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-Bd-FlT" customClass="MeetingDetailButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9IO-Bd-FlT" customClass="MeetingDetailButton">
                                 <rect key="frame" x="50" y="360" width="195" height="166"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
@@ -462,7 +462,7 @@
                                     <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="BTj-Cm-PKO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-tM-Pdi" customClass="MeetingDetailButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWF-tM-Pdi" customClass="MeetingDetailButton">
                                 <rect key="frame" x="536" y="360" width="195" height="166"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
@@ -475,7 +475,7 @@
                                     <action selector="buttonClicked:" destination="muf-t2-XxK" eventType="touchUpInside" id="oMW-WP-jR8"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-lP-pbv" customClass="MeetingDetailButton">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJe-lP-pbv" customClass="MeetingDetailButton">
                                 <rect key="frame" x="779" y="360" width="195" height="166"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <inset key="titleEdgeInsets" minX="0.0" minY="110" maxX="0.0" maxY="0.0"/>
@@ -496,8 +496,8 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="400" translatesAutoresizingMaskIntoConstraints="NO" id="xE6-DQ-JNt">
                                 <rect key="frame" x="312" y="680" width="400" height="40"/>
-                                <string key="text">会前、会中、会后至少拍摄2张照片，
-其他内容请根据会议需要拍摄，建议最少拍摄2张</string>
+                                <string key="text">全景至少拍摄1张照片，
+其他内容请根据会议需要拍摄，建议最少拍摄1张</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -546,7 +546,7 @@
                                 <color key="textColor" red="0.30980392159999998" green="0.1764705882" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请至少拍摄2张照片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXU-MF-vca">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="请至少拍摄1张照片" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXU-MF-vca">
                                 <rect key="frame" x="312" y="675" width="400" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -654,7 +654,7 @@
         <image name="img_unchecked" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Ug2-KA-c4c"/>
         <segue reference="xOp-I7-Sma"/>
-        <segue reference="zBh-qd-btM"/>
     </inferredMetricsTieBreakers>
 </document>

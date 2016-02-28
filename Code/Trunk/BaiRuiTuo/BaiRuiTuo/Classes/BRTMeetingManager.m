@@ -169,6 +169,7 @@
     else {
         allMeeting = [db executeQuery:@"select * from brt_meeting where meeting_type = ? and meeting_time > ?", @(meetingType), overTime];
     }
+    
     while ([allMeeting next]) {
         BRTMeetingModel *meeting = [[BRTMeetingModel alloc] init];
         meeting.meetingID = [allMeeting stringForColumn:kBRTMeetingIDKey];

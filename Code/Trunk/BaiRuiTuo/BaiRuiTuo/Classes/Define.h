@@ -18,17 +18,18 @@
 #define kBRTUsernameKey         @"BRTUsername"
 #define kBRTPasswordKey         @"BRTPassword"
 
-//测试地址#define kBRTOPERAServerURL @"http://bsgsgps0358.ap.bayer.cnb:8100"
+// 测试地址
+#define kBRTOPERAServerURL @"http://bsgsgps0358.ap.bayer.cnb:8100"
 //旧地址#define kBRTOPERAServerURL @"http://bsgsgps0355.ap.bayer.cnb:8100"
 #ifdef TEST
 #define kBRTOPERAServerURL @"http://bcnshgs0130.ap.bayer.cnb:8100"
 #else
 #ifdef DEBUG
-#define kBRTOPERAServerURL @"http://bcnshgs0130.ap.bayer.cnb:8100"
+//#define kBRTOPERAServerURL @"http://bcnshgs0130.ap.bayer.cnb:8100"
 #else
 //生产环境
 // 2015-06-09，服务器地址变动
-#define kBRTOPERAServerURL @"http://bcnshgs0130.ap.bayer.cnb:8100"
+//#define kBRTOPERAServerURL @"http://bcnshgs0130.ap.bayer.cnb:8100"
 #endif
 #endif
 #ifdef DEBUG

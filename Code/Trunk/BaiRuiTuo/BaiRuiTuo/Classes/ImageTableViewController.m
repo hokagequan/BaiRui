@@ -160,7 +160,7 @@
     imageScrollVC.images = self.images;
 //    imageScrollVC.hidesDeleteButton = self.hidesCameraButton;
     if (self.imageType == BeforeMeetingType || self.imageType == AfterMeetingType) {
-        imageScrollVC.minImageCount = 2;
+        imageScrollVC.minImageCount = 1;
     }
     [self.navigationController pushViewController:imageScrollVC animated:YES];
 }

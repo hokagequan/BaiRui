@@ -6,16 +6,23 @@
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "d67bb186-07a8-bb42-9463-aa84acc78bf8++7666" : 0
+    "d67bb186-07a8-bb42-9463-aa84acc78bf8++7666" : 0,
+    "EF1B57799D237AC7839AB9E79AC79664DC38A02A" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "4C1FBFF7-83FF-43C0-AE14-480967DCC615",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "d67bb186-07a8-bb42-9463-aa84acc78bf8++7666" : "BaiRuiTuo"
+    "d67bb186-07a8-bb42-9463-aa84acc78bf8++7666" : "BaiRuiTuo",
+    "EF1B57799D237AC7839AB9E79AC79664DC38A02A" : "..\/.."
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "BaiRuiTuo",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BaiRuiTuo.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hokagequan\/BaiRui.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF1B57799D237AC7839AB9E79AC79664DC38A02A"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "http:\/\/192.168.8.3\/svn\/ios_dev",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",

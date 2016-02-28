@@ -11,6 +11,8 @@
 #import "AFNetworking.h"
 #import "Define.h"
 
+#define TEST
+
 @interface LoginViewController ()
 {
 }
