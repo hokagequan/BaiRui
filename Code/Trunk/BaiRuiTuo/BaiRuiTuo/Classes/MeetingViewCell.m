@@ -16,6 +16,12 @@
     [self.leftButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.centerButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     [self.rightButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.startButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.centerButton.layer.cornerRadius = 8;
+    self.centerButton.layer.masksToBounds = YES;
+    self.startButton.layer.cornerRadius = 8;
+    self.startButton.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -50,15 +56,23 @@
             enabled = YES;
             showTwoButton = NO;
             break;
-        case AfterMeetingState:
+        case AfterMeetingState: {
             stateString = @"会议结束";
             enabled = YES;
+            
+//            if (self.detail.beforeMeetingImages.count >= 1) {
+//                showTwoButton = YES;
+//            }
+//            else {
+//                showTwoButton = NO;
+//            }
             showTwoButton = YES;
+        }
             break;
         case UploadedState:
             stateString = @"已同步";
             enabled = YES;
-            showTwoButton = YES;
+            showTwoButton = NO;
             break;
         case CancelByServerState:
             stateString = @"OPERA中已取消";
@@ -98,6 +112,9 @@
         self.stateLabel.textColor = kAppGrayColor;
         self.centerButton.enabled = NO;
     }
+    
+    self.startButton.hidden = YES;
+    
     if (showTwoButton) {
         self.centerButton.hidden = YES;
         self.leftButton.hidden = NO;
@@ -110,7 +127,11 @@
     }
     if (beforeMeeting) {
         self.leftButton.selected = YES;
-        self.rightButton.selected = YES;
+        self.rightButton.selected = NO;
+        self.leftButton.hidden = YES;
+        self.rightButton.hidden = YES;
+        self.centerButton.hidden = YES;
+        self.startButton.hidden = NO;
     }
     else {
         self.leftButton.selected = NO;

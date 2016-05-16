@@ -129,11 +129,18 @@
         [self.tableView reloadData];
         if (self.imageType == BeforeMeetingType) {
             BRTMeetingModel *meeting = [[BRTMeetingManager sharedManager] currentMeeting];
-            if (meeting.beginTime == nil) {
-                meeting.beginTime = date;
+            // QCW FIX 1.4
+            if (meeting.endTime == nil) {
+                meeting.endTime = date;
                 int time = [date timeIntervalSince1970];
-                [[BRTMeetingManager sharedManager] updateValue:@(time) forKey:kBRTMeetingBeginTimeKey withMeetingID:meeting.meetingID];
+                [[BRTMeetingManager sharedManager] updateValue:@(time) forKey:kBRTMeetingEndTimeKey withMeetingID:meeting.meetingID];
             }
+            
+//            if (meeting.beginTime == nil) {
+//                meeting.beginTime = date;
+//                int time = [date timeIntervalSince1970];
+//                [[BRTMeetingManager sharedManager] updateValue:@(time) forKey:kBRTMeetingBeginTimeKey withMeetingID:meeting.meetingID];
+//            }
         }
         if (self.imageType == AfterMeetingType) {
             BRTMeetingModel *meeting = [[BRTMeetingManager sharedManager] currentMeeting];

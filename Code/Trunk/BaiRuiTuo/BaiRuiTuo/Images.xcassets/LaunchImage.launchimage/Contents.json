@@ -5,15 +5,14 @@
       "idiom" : "ipad",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "Default-Landscape.png",
       "scale" : "1x"
     },
     {
       "orientation" : "landscape",
       "idiom" : "ipad",
+      "filename" : "启动页背景.png",
       "extent" : "full-screen",
       "minimum-system-version" : "7.0",
-      "filename" : "Default-Landscape@2x.png",
       "scale" : "2x"
     }
   ],

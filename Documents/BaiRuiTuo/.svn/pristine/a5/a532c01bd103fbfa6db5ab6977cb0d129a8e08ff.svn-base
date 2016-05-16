@@ -1,0 +1,73 @@
+//
+//  BRTMeetingManager.h
+//  BaiRuiTuo
+//
+//  Created by kingyee on 15/1/20.
+//  Copyright (c) 2015年 Kingyee. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BRTMeetingModel.h"
+#import "FMDB.h"
+
+#define kBRTMeetingIDKey            @"meeting_id"
+#define kBRTMeetingNameKey          @"meeting_name"
+#define kBRTMeetingTypeKey          @"meeting_type"
+#define kBRTMeetingTimeKey          @"meeting_time"
+#define kBRTMeetingOfficeKey        @"meeting_office"
+#define kBRTMeetingRequesterCWIDKey @"requester_cwid"
+#define kBRTMeetingSubmitterCWIDKey @"submitter_cwid"
+#define kBRTMeetingLMCWIDKey        @"lm_cwid"
+#define kBRTMeetingLMNameCNKey      @"lm_namecn"
+#define kBRTMeetingHomeCostCenterCodeKey        @"HomeCostCenterCode"
+#define kBRTMeetingHomeCostCenterDescKey        @"HomeCostCenterDesc"
+#define kBRTMeetingRegionCodeKey        @"RegionCode"
+#define kBRTMeetingRegionKey        @"Region"
+#define kBRTMeetingStateKey         @"meeting_state"
+#define kBRTMeetingBeginTimeKey     @"begin_time"
+#define kBRTMeetingEndTimeKey       @"end_time"
+#define kBRTMeetingUploadTimeKey    @"upload_time"
+
+typedef NS_ENUM(NSUInteger, BRTMeetingType) {
+    BRTOfficeMeeting = 1,
+    BRTHospitalMeeting = 2,
+    BRTCityMeeting = 10,
+    AllMeeting
+};
+
+@interface BRTMeetingManager : NSObject
+
+@property (nonatomic, strong) NSMutableArray *meetings;
+@property (nonatomic, weak) BRTMeetingModel *currentMeeting;
+@property (nonatomic, strong) NSString *dbPath;
+
++ (instancetype)sharedManager;
+
+- (void)createDatabase;
+
+//获取某一类型的会议列表
+- (NSMutableArray*)loadMeetingList:(BRTMeetingType)meetingType;
+
+//更新会议列表
+- (void)updateMeetingList:(NSArray*)array;
+
+//保存图片并返回图片文件路径
+- (NSString*)writeImageData:(NSData*)data withImageType:(BRTImageType)imageType;
+
+//更新会议某个属性值
+- (void)updateValue:(id)value forKey:(NSString*)key withMeetingID:(NSString*)meetingID;
+
+//删除图片
+- (void)deleteImage:(NSString*)imagePath withMeetingID:(NSString*)meetingID;
+
+//上传会议图片
+- (void)uploadMeeting:(BRTMeetingModel*)meeting success:(void (^)(id JSON))success
+              failure:(void (^)(NSError *error))failure;
+
+//删除一个月前的数据
+- (void)deleteUnusedMeetingData;
+
+//同步会议记录
+- (void)uploadMeetingRecords;
+
+@end

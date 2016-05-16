@@ -23,8 +23,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *centerButton;
 @property (weak, nonatomic) IBOutlet UIButton *leftButton;
 @property (weak, nonatomic) IBOutlet UIButton *rightButton;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 @property (assign, nonatomic) id <MeetingViewCellDelegate> delegate;
 @property (assign, nonatomic) NSInteger state;
+@property (strong, nonatomic) BRTMeetingDetailModel *detail;
 
 @end
 

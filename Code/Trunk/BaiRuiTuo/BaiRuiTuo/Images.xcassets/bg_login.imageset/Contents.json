@@ -1,18 +1,13 @@
 {
   "images" : [
     {
-      "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "bg_login.png"
+      "idiom" : "ipad",
+      "scale" : "1x"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "bg_login@2x.png"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "idiom" : "ipad",
+      "filename" : "登录页背景.png",
+      "scale" : "2x"
     }
   ],
   "info" : {

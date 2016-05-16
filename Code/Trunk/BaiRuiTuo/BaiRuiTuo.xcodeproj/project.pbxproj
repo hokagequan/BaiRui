@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		104A44111C7F3A0700CE4029 /* kk.plist in Resources */ = {isa = PBXBuildFile; fileRef = 104A44101C7F3A0700CE4029 /* kk.plist */; };
+		10F1097D1C87C4DB0083D89D /* CustomObjectUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F1097C1C87C4DB0083D89D /* CustomObjectUtil.m */; };
 		B424AC7C1A78DB4B009239F6 /* UIImage+Date.m in Sources */ = {isa = PBXBuildFile; fileRef = B424AC7B1A78DB4B009239F6 /* UIImage+Date.m */; };
 		B4442AB81A6E377E00515A06 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4442AB31A6E377E00515A06 /* SVIndefiniteAnimatedView.m */; };
 		B4442AB91A6E377E00515A06 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B4442AB51A6E377E00515A06 /* SVProgressHUD.bundle */; };
@@ -143,6 +144,8 @@
 
 /* Begin PBXFileReference section */
 		104A44101C7F3A0700CE4029 /* kk.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = kk.plist; sourceTree = "<group>"; };
+		10F1097B1C87C4DB0083D89D /* CustomObjectUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomObjectUtil.h; sourceTree = "<group>"; };
+		10F1097C1C87C4DB0083D89D /* CustomObjectUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomObjectUtil.m; sourceTree = "<group>"; };
 		B424AC7A1A78DB4B009239F6 /* UIImage+Date.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Date.h"; sourceTree = "<group>"; };
 		B424AC7B1A78DB4B009239F6 /* UIImage+Date.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Date.m"; sourceTree = "<group>"; };
 		B4442AB21A6E377E00515A06 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
@@ -300,6 +303,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10F1097A1C87C4DB0083D89D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				10F1097B1C87C4DB0083D89D /* CustomObjectUtil.h */,
+				10F1097C1C87C4DB0083D89D /* CustomObjectUtil.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		B4442AB11A6E377E00515A06 /* SVProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -425,6 +437,7 @@
 		B4831E7C1A64B5CA002A587A /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				10F1097A1C87C4DB0083D89D /* Utils */,
 				B483ABFA1ABFE000000BA30B /* BaiduMobStat */,
 				B459AC791A7F178800DBB51B /* SSZipArchive */,
 				B48FFA081A760DD5005D37E1 /* AFNetworking */,
@@ -788,6 +801,7 @@
 				B459AC871A7F178800DBB51B /* mztools.c in Sources */,
 				B424AC7C1A78DB4B009239F6 /* UIImage+Date.m in Sources */,
 				B459AC891A7F178800DBB51B /* zip.c in Sources */,
+				10F1097D1C87C4DB0083D89D /* CustomObjectUtil.m in Sources */,
 				B4831EA31A64BB07002A587A /* HospitalTableViewController.m in Sources */,
 				B483ABF81ABFC645000BA30B /* AFURLConnectionOperation+NeedNewBodyStream.m in Sources */,
 				B48FFA1D1A760DD5005D37E1 /* AFHTTPRequestOperationManager.m in Sources */,
@@ -951,8 +965,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INFOPLIST_FILE = BaiRuiTuo/Info.plist;
@@ -962,7 +976,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiRuiTuo/Classes/BaiduMobStat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eading.bailepai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bayer.bhc.BayPhoto;
 				PRODUCT_NAME = BayPhoto;
 				PROVISIONING_PROFILE = "";
 			};
@@ -973,8 +987,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = BaiRuiTuo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -983,7 +997,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/BaiRuiTuo/Classes/BaiduMobStat",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.eading.bailepai;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bayer.bhc.BayPhoto;
 				PRODUCT_NAME = BayPhoto;
 				PROVISIONING_PROFILE = "";
 			};

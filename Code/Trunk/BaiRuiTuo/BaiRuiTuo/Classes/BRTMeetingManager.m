@@ -16,6 +16,8 @@
 #define kBRTDataFolderName @"BaiRuiTuo"
 #define kBRTDatabaseName @"brt.db"
 
+//#define TEST
+
 @interface BRTMeetingManager ()
 
 @property (nonatomic, strong) FMDatabaseQueue *dbQueue;
@@ -104,43 +106,43 @@
         NSLog(@"%@", [db lastErrorMessage]);
         return nil;
     }
-//#ifdef TEST
-//    FMResultSet *resultSet = [db executeQuery:@"select * from brt_meeting where meeting_id = 15080210001"];
-//    if (![resultSet next]) {
-//        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"meeting" ofType:@"txt"];
-//        NSString *srcString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
-//        NSMutableArray *testArray = [NSMutableArray array];
-//        NSArray *rows = [srcString componentsSeparatedByString:@"\n\n"];
-//        for (NSString *subStr in rows) {
-//            NSArray *columns = [subStr componentsSeparatedByString:@"\n"];
-//            [testArray addObject:columns];
-//        }
-//        
-//        for (NSArray *columns in testArray) {
-//            NSString *meetingID = columns[0];
-//            NSString *meetingTime = columns[2];
-//            NSString *meetingName = columns[3];
-//            NSString *office = columns[4];
-//            int state = [columns[5] intValue];
-//            
-//            //城市会
-//            NSString *meetingType = @"10";//columns[1];
-//            BOOL retValue = [db executeUpdate:@"insert into brt_meeting (id, meeting_id, meeting_type, meeting_time, meeting_name, meeting_office, requester_cwid, submitter_cwid, lm_cwid, lm_namecn, HomeCostCenterCode, HomeCostCenterDesc, RegionCode, region, meeting_state, begin_time, end_time, upload_time, update_flag) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-//                             NULL, meetingID, meetingType, meetingTime, meetingName, office, @"", @"", @"", @"", @"", @"", @"", @"", @(state), @(0), @(0), @(0), @(1)];
-//            if (!retValue) {
-//                NSLog(@"%@", [db lastErrorMessage]);
-//            }
-//            //科室会
-//            meetingType = @"1";
-//            [db executeUpdate:@"insert into brt_meeting (id, meeting_id, meeting_type, meeting_time, meeting_name, meeting_office, requester_cwid, submitter_cwid, lm_cwid, lm_namecn, HomeCostCenterCode, HomeCostCenterDesc, RegionCode, region, meeting_state, begin_time, end_time, upload_time, update_flag) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-//             NULL, meetingID, meetingType, meetingTime, meetingName, office, @"", @"", @"", @"", @"", @"", @"", @"", @(state), @(0), @(0), @(0), @(1)];
-//            //院内会
-//            meetingType = @"2";
-//            [db executeUpdate:@"insert into brt_meeting (id, meeting_id, meeting_type, meeting_time, meeting_name, meeting_office, requester_cwid, submitter_cwid, lm_cwid, lm_namecn, HomeCostCenterCode, HomeCostCenterDesc, RegionCode, region, meeting_state, begin_time, end_time, upload_time, update_flag) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
-//             NULL, meetingID, meetingType, meetingTime, meetingName, office, @"", @"", @"", @"", @"", @"", @"", @"", @(state), @(0), @(0), @(0), @(1)];
-//        }
-//    }
-//#endif
+#ifdef TEST
+    FMResultSet *resultSet = [db executeQuery:@"select * from brt_meeting where meeting_id = 15080210001"];
+    if (![resultSet next]) {
+        NSString *filePath = [[NSBundle mainBundle] pathForResource:@"meeting" ofType:@"txt"];
+        NSString *srcString = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+        NSMutableArray *testArray = [NSMutableArray array];
+        NSArray *rows = [srcString componentsSeparatedByString:@"\n\n"];
+        for (NSString *subStr in rows) {
+            NSArray *columns = [subStr componentsSeparatedByString:@"\n"];
+            [testArray addObject:columns];
+        }
+        
+        for (NSArray *columns in testArray) {
+            NSString *meetingID = columns[0];
+            NSString *meetingTime = columns[2];
+            NSString *meetingName = columns[3];
+            NSString *office = columns[4];
+            int state = [columns[5] intValue];
+            
+            //城市会
+            NSString *meetingType = @"10";//columns[1];
+            BOOL retValue = [db executeUpdate:@"insert into brt_meeting (id, meeting_id, meeting_type, meeting_time, meeting_name, meeting_office, requester_cwid, submitter_cwid, lm_cwid, lm_namecn, HomeCostCenterCode, HomeCostCenterDesc, RegionCode, region, meeting_state, begin_time, end_time, upload_time, update_flag) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                             NULL, meetingID, meetingType, meetingTime, meetingName, office, @"", @"", @"", @"", @"", @"", @"", @"", @(state), @(0), @(0), @(0), @(1)];
+            if (!retValue) {
+                NSLog(@"%@", [db lastErrorMessage]);
+            }
+            //科室会
+            meetingType = @"1";
+            [db executeUpdate:@"insert into brt_meeting (id, meeting_id, meeting_type, meeting_time, meeting_name, meeting_office, requester_cwid, submitter_cwid, lm_cwid, lm_namecn, HomeCostCenterCode, HomeCostCenterDesc, RegionCode, region, meeting_state, begin_time, end_time, upload_time, update_flag) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+             NULL, meetingID, meetingType, meetingTime, meetingName, office, @"", @"", @"", @"", @"", @"", @"", @"", @(state), @(0), @(0), @(0), @(1)];
+            //院内会
+            meetingType = @"1";
+            [db executeUpdate:@"insert into brt_meeting (id, meeting_id, meeting_type, meeting_time, meeting_name, meeting_office, requester_cwid, submitter_cwid, lm_cwid, lm_namecn, HomeCostCenterCode, HomeCostCenterDesc, RegionCode, region, meeting_state, begin_time, end_time, upload_time, update_flag) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+             NULL, meetingID, meetingType, meetingTime, meetingName, office, @"", @"", @"", @"", @"", @"", @"", @"", @(state), @(0), @(0), @(0), @(1)];
+        }
+    }
+#endif
     
     NSDateFormatter *dateFmt = [[NSDateFormatter alloc] init];
     dateFmt.dateFormat = @"yyyy-MM-dd";
@@ -164,7 +166,7 @@
     
     FMResultSet *allMeeting;
     if (meetingType == AllMeeting) {
-        allMeeting = [db executeQuery:@"select * from brt_meeting"];
+        allMeeting = [db executeQuery:@"select * from brt_meeting where meeting_time > ?", overTime];
     }
     else {
         allMeeting = [db executeQuery:@"select * from brt_meeting where meeting_type = ? and meeting_time > ?", @(meetingType), overTime];
@@ -177,6 +179,7 @@
         meeting.meetingOffice = [allMeeting stringForColumn:kBRTMeetingOfficeKey];
         meeting.meetingTime = [allMeeting stringForColumn:kBRTMeetingTimeKey];
         meeting.meetingState = @([allMeeting intForColumn:kBRTMeetingStateKey]);
+        meeting.meetingType = [allMeeting stringForColumn:kBRTMeetingTypeKey];
         
         int beginTime = [allMeeting intForColumn:kBRTMeetingBeginTimeKey];
         int endTime = [allMeeting intForColumn:kBRTMeetingEndTimeKey];
@@ -352,7 +355,7 @@
     [self uploadMeetingRecords];
 }
 
-#define kBRTImageTypes @[@"BeforeMeeting",@"InMeeting",@"AfterMeeting",@"Refreshments",@"Cars",@"Meals",@"Others"]
+#define kBRTImageTypes @[@"Panorama",@"Speaker",@"AfterMeeting",@"Refreshments",@"Cars",@"Meals",@"Others"]
 - (NSString*)writeImageData:(NSData*)data withImageType:(BRTImageType)imageType
 {
     BRTMeetingModel *meeting = self.currentMeeting;
@@ -401,7 +404,7 @@
     
     NSString *fileName = nil;
     if (lastImageName == nil) {
-        fileName = [NSString stringWithFormat:@"iPad %@ %d.jpg", typeString, 1];
+        fileName = [NSString stringWithFormat:@"%@ %d.jpg", typeString, 1];
     }
     else {
         NSMutableString *lastName = [NSMutableString stringWithString:[lastImageName lastPathComponent]];
@@ -412,7 +415,7 @@
         if (result) {
             NSRange range = result.range;
             int lastIndex = [[lastName substringWithRange:range] intValue];
-            fileName = [NSString stringWithFormat:@"iPad %@ %d.jpg", typeString, lastIndex+1];
+            fileName = [NSString stringWithFormat:@"%@ %d.jpg", typeString, lastIndex+1];
         }
     }
     
@@ -635,23 +638,26 @@
         [dict setObject:[resultSet objectForColumnName:kBRTMeetingHomeCostCenterDescKey] forKey:kBRTMeetingHomeCostCenterDescKey];
         [dict setObject:[resultSet objectForColumnName:kBRTMeetingRegionCodeKey] forKey:kBRTMeetingRegionCodeKey];
         [dict setObject:[resultSet objectForColumnName:kBRTMeetingRegionKey] forKey:kBRTMeetingRegionKey];
-        [dict setObject:username forKey:@"user_cwid"];//代表的CWID
+//        [dict setObject:username forKey:@"user_cwid"];//代表的CWID
         [dict setObject:[resultSet objectForColumnName:kBRTMeetingBeginTimeKey] forKey:kBRTMeetingBeginTimeKey];
         [dict setObject:[resultSet objectForColumnName:kBRTMeetingEndTimeKey] forKey:kBRTMeetingEndTimeKey];
-        BRTMeetingType meetingType = [resultSet intForColumn:kBRTMeetingTypeKey];
-        NSString *typeString = @"";
-        if (meetingType == BRTOfficeMeeting) {
-            typeString = @"科室会";
-        }
-        else if (meetingType == BRTHospitalMeeting)
-        {
-            typeString = @"院内会";
-        }
-        else if (meetingType == BRTCityMeeting)
-        {
-            typeString = @"城市会";
-        }
-        [dict setObject:typeString forKey:kBRTMeetingTypeKey];
+        
+        // QCW 1.4 Fix
+        [dict setObject:[resultSet objectForColumnName:kBRTMeetingTypeKey] forKey:kBRTMeetingTypeKey];
+//        BRTMeetingType meetingType = [resultSet intForColumn:kBRTMeetingTypeKey];
+//        NSString *typeString = @"";
+//        if (meetingType == BRTOfficeMeeting) {
+//            typeString = @"科室会";
+//        }
+//        else if (meetingType == BRTHospitalMeeting)
+//        {
+//            typeString = @"院内会";
+//        }
+//        else if (meetingType == BRTCityMeeting)
+//        {
+//            typeString = @"城市会";
+//        }
+//        [dict setObject:typeString forKey:kBRTMeetingTypeKey];
         
         BRTMeetingState meetingState = [resultSet intForColumn:kBRTMeetingStateKey];
         NSString *stateString = @"";

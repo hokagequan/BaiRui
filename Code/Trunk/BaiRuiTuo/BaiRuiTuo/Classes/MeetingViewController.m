@@ -39,8 +39,8 @@
     [super viewDidLoad];
     
     // QCW 1.4 FIX
-    self.meetingType = BRTOfficeMeeting;
-    self.title = @"医院会议列表";
+    self.meetingType = AllMeeting;
+    self.title = @"会议列表";
     self.navigationController.navigationBarHidden = NO;
     
     self.alerViewCtrl = [[BRTAlertViewController alloc] init];
@@ -53,7 +53,7 @@
     self.meetings = [self filterdArray:array];
     
     // FIXME: Test
-//    [self loadAllMeeting];
+    [self loadAllMeeting];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -150,11 +150,28 @@
 //        return;
 //    }
     
+    // FIXME: Test
+//    NSString *pathtemp = NSTemporaryDirectory();
+//    [[BRTMeetingManager sharedManager] createDatabase];
+//    
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"kk" ofType:@"plist"];
+//    NSDictionary *sourceDict = [NSDictionary dictionaryWithContentsOfFile:path];
+//    NSString *dataString = sourceDict[@"string"];
+//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:[dataString dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+//    NSArray *array = [dict objectForKey:@"Arguments"];
+//    [[BRTMeetingManager sharedManager] updateMeetingList:array];
+//    NSMutableArray *newArray = [[BRTMeetingManager sharedManager] loadMeetingList:self.meetingType];
+//    // QCW 1.4 FIX
+//    self.meetings = [self filterdArray:newArray];
+//    [self.tableView reloadData];
+//    
+//    return;
+    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
     NSString *username = [ud objectForKey:kBRTUsernameKey];
     NSString *urlString = [kBRTOPERAServerURL stringByAppendingPathComponent:@"Event.aspx"];
     //    NSDictionary *parameters = @{@"RequesterCWID": username, @"EventType":@(0)};
-    urlString = [urlString stringByAppendingFormat:@"?RequesterCWID=%@&EventType=%d", username, (int)self.meetingType];
+    urlString = [urlString stringByAppendingFormat:@"?RequesterCWID=%@&EventType=%@", username, @""];
     
     //EventType活动类型:1科室会；2院内会；10城市会；不传，所有类型。
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -217,32 +234,34 @@
     NSInteger row = indexPath.row;
     
     cell.leftButton.tag = kLeftButtonTag + row;
+    cell.startButton.tag = kLeftButtonTag + row;
     cell.centerButton.tag = kCenterButtonTag + row;
     cell.rightButton.tag = kRightButtonTag + row;
     cell.delegate = self;
     
-    NSString *typeString = nil;
-    switch (self.meetingType) {
-        case BRTOfficeMeeting:
-            typeString = @"科室会";
-            break;
-        case BRTHospitalMeeting:
-            typeString = @"院内会";
-            break;
-        case BRTCityMeeting:
-            typeString = @"城市会";
-            break;
-        default:
-            break;
-    }
-    cell.typeLabel.text = typeString;
-    
+    // QCW 1.4 Fix
     BRTMeetingModel *meeting = self.meetings[row];
+    NSString *typeString = meeting.meetingType;
+//    switch (self.meetingType) {
+//        case BRTOfficeMeeting:
+//            typeString = @"科室会";
+//            break;
+//        case BRTHospitalMeeting:
+//            typeString = @"院内会";
+//            break;
+//        case BRTCityMeeting:
+//            typeString = @"城市会";
+//            break;
+//        default:
+//            break;
+//    }
+    cell.typeLabel.text = typeString;
     cell.numberLabel.text = meeting.meetingID;
     cell.dateLabel.text = meeting.meetingTime;
     cell.nameLabel.text = meeting.meetingName;
     cell.officeLabel.text = meeting.meetingOffice;
     cell.state = [meeting.meetingState intValue];
+    cell.detail = meeting.meetingDetail;
     
     return cell;
 }
@@ -284,29 +303,22 @@
     
     NSInteger state = [meetingModel.meetingState integerValue];
     if (state == BeforeMeetingState) {
-        if (btnType == 1) {
-            if (dayOffset >= 7) {
-                [SVProgressHUD showImage:nil status:@"时间未到，不能开始会议"];
-            }
-            else {
-                meetingModel.meetingState = @(InMeetingState);
-                [[BRTMeetingManager sharedManager] updateValue:@(InMeetingState) forKey:kBRTMeetingStateKey withMeetingID:meetingModel.meetingID];
-                [self.tableView reloadData];
-                [self showMeetingDetail:meetingModel];
-            }
-        }
-        else if (btnType == 3) {
-            self.alerViewCtrl.message = @"此次会议将被取消，此操作不能恢复，请确认是否取消！";
-            __block MeetingViewController *blockSelf = self;
-            __block BRTMeetingManager *blockMeetingMan = [BRTMeetingManager sharedManager];
-            [self.alerViewCtrl addActionWithHandler:^{
-                meetingModel.meetingState = @(CancelByAppState);
-                [blockMeetingMan updateValue:@(CancelByAppState) forKey:kBRTMeetingStateKey withMeetingID:meetingModel.meetingID];
-                [blockSelf.meetings removeObject:meetingModel];
-                [blockSelf.tableView reloadData];
-            }];
-            [self.navigationController.view addSubview:self.alerViewCtrl.view];
-        }
+        // QCW 1.4 fix
+//        if (dayOffset >= 7) {
+//            [SVProgressHUD showImage:nil status:@"时间未到，不能开始会议"];
+//        }
+//        else {
+            // QCW FIX 1.4
+            NSDate *date = [NSDate date];
+            meetingModel.beginTime = date;
+            int time = [date timeIntervalSince1970];
+            [[BRTMeetingManager sharedManager] updateValue:@(time) forKey:kBRTMeetingBeginTimeKey withMeetingID:meetingModel.meetingID];
+            
+            meetingModel.meetingState = @(InMeetingState);
+            [[BRTMeetingManager sharedManager] updateValue:@(InMeetingState) forKey:kBRTMeetingStateKey withMeetingID:meetingModel.meetingID];
+            [self.tableView reloadData];
+            [self showMeetingDetail:meetingModel];
+//        }
     }
     else if (state == InMeetingState) {
         if (btnType == 2) {
@@ -316,17 +328,17 @@
     else if (state == AfterMeetingState || state == UploadedState) {
         if (btnType == 1) {
             // 2015-04-02, 同步时照片数量不作限制
-//            BRTMeetingDetailModel *meetingDetail = meetingModel.meetingDetail;
-//            if (meetingDetail.beforeMeetingImages.count < 2) {
-//                [SVProgressHUD showErrorWithStatus:@"会前照片少于2张，无法同步"];
+            BRTMeetingDetailModel *meetingDetail = meetingModel.meetingDetail;
+            if (meetingDetail.beforeMeetingImages.count < 1) {
+                [SVProgressHUD showErrorWithStatus:@"照片少于1张，无法同步"];
+                return;
+            }
+//            else if (meetingDetail.inMeetingImages.count < 1) {
+//                [SVProgressHUD showErrorWithStatus:@"照片少于1张，无法同步"];
 //                return;
 //            }
-//            else if (meetingDetail.inMeetingImages.count < 2) {
-//                [SVProgressHUD showErrorWithStatus:@"会中照片少于2张，无法同步"];
-//                return;
-//            }
-//            else if (meetingDetail.afterMeetingImages.count < 2) {
-//                [SVProgressHUD showErrorWithStatus:@"会后照片少于2张，无法同步"];
+//            else if (meetingDetail.afterMeetingImages.count < 1) {
+//                [SVProgressHUD showErrorWithStatus:@"照片少于1张，无法同步"];
 //                return;
 //            }
             // 2015-04-02, 同步时不验证登录信息
@@ -341,7 +353,7 @@
 //            }];
             [self uploadMeeting:meetingModel];
         }
-        else if (btnType == 3) {
+        else if (btnType == 2 || btnType == 3) {
             [self showMeetingDetail:meetingModel];
         }
     }

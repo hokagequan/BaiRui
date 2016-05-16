@@ -22,6 +22,9 @@
     
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_logout.png"] style:UIBarButtonItemStylePlain target:self action:@selector(logoutAction)];
     
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(clickBack:)];
+    self.navigationItem.leftBarButtonItem = item;
+    
     [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
     [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
 }

@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BaiRuiTuo/Classes/BRTViewController.m"
-            timestampString = "478169276.420114"
+            filePath = "BaiRuiTuo/Classes/BRTMeetingManager.m"
+            timestampString = "482652149.37918"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "-clickBack:"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
+            landmarkName = "-updateMeetingList:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

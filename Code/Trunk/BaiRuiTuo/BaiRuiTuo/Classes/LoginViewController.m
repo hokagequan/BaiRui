@@ -10,8 +10,9 @@
 #import "SVProgressHUD.h"
 #import "AFNetworking.h"
 #import "Define.h"
+#import "CustomObjectUtil.h"
 
-#define TEST
+//#define TEST
 
 @interface LoginViewController ()
 {
@@ -20,6 +21,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UIButton *rememberButton;
+@property (weak, nonatomic) IBOutlet UIView *userBorderView;
+@property (weak, nonatomic) IBOutlet UIView *passwordBorderView;
+@property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 - (IBAction)loginButtonClicked:(UIButton*)sender;
 - (IBAction)rememberButtonClicked:(UIButton*)sender;
@@ -34,6 +38,10 @@
     if ([self logined]) {
         [self performSegueWithIdentifier:@"showRootView" sender:nil];
     }
+    
+    [CustomObjectUtil customObject:@[self.userBorderView, self.passwordBorderView] backgroundColor:[UIColor clearColor] borderWith:1 borderColor:[UIColor colorWithRed:227 / 255. green:0 blue:122 / 255. alpha:1] corner:0];
+    self.loginButton.layer.cornerRadius = 29.0;
+    self.loginButton.layer.masksToBounds = YES;
 }
 
 - (void)didReceiveMemoryWarning {

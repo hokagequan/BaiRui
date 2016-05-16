@@ -1,0 +1,37 @@
+//
+//  BRTMeetingManager.h
+//  BaiRuiTuo
+//
+//  Created by kingyee on 15/1/20.
+//  Copyright (c) 2015年 Kingyee. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "BRTMeetingModel.h"
+#import "FMDB.h"
+
+#define kBRTMeetingIDKey            @"meeting_id"
+#define kBRTMeetingNameKey          @"meeting_name"
+#define kBRTMeetingTimeKey          @"meeting_time"
+#define kBRTMeetingOfficeKey        @"meeting_office"
+#define kBRTMeetingManagerKey       @"meeting_manager"
+#define kBRTMeetingStateKey         @"meeting_state"
+#define kBRTMeetingBeginTimeKey     @"begin_time"
+#define kBRTMeetingEndTimeKey       @"end_time"
+#define kBRTMeetingUploadTimeKey    @"upload_time"
+
+@interface BRTMeetingManager : NSObject
+
+@property (nonatomic, strong) NSMutableArray *meetings;
+@property (nonatomic, weak) BRTMeetingModel *currentMeeting;
+@property (nonatomic, strong) NSString *dbPath;
+
++ (instancetype)sharedManager;
+- (void)createDatabase;
+//返回图片文件路径
+- (NSString*)writeData:(NSData*)data withImageType:(BRTImageType)imageType;
+
+- (void)updateValue:(id)value forKey:(NSString*)key withMeetingID:(NSString*)meetingID;
+- (void)deleteImage:(NSString*)imagePath withMeetingID:(NSString*)meetingID;
+
+@end

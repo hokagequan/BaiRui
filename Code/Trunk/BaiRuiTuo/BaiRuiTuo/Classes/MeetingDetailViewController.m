@@ -12,7 +12,7 @@
 #import "ImageTableViewController.h"
 #import "SVProgressHUD.h"
 
-@interface MeetingDetailViewController ()
+@interface MeetingDetailViewController ()<UIAlertViewDelegate>
 {
     BOOL overOneDay;
 }
@@ -50,13 +50,6 @@
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    BRTMeetingModel *currentMeeting = [[BRTMeetingManager sharedManager] currentMeeting];
-    if ([currentMeeting.meetingState integerValue] == InMeetingState) {
-        if (currentMeeting.endTime) {
-            currentMeeting.meetingState = @(AfterMeetingState);
-            [[BRTMeetingManager sharedManager] updateValue:@(AfterMeetingState) forKey:kBRTMeetingStateKey withMeetingID:currentMeeting.meetingID];
-        }
-    }
 }
 
 - (void)loadData
@@ -99,16 +92,24 @@
 //        self.afterMeetingBtn.cameraButton.enabled = YES;
     }
     
+    BOOL cannotTakePicture = NO;
+    BRTMeetingModel *meeting = [[BRTMeetingManager sharedManager] currentMeeting];
+    if ([meeting.meetingState isEqualToNumber:@(AfterMeetingState)] ||
+        [meeting.meetingState isEqualToNumber:@(UploadedState)]) {
+//        [SVProgressHUD showErrorWithStatus:@"会议已结束，不能拍摄照片"];
+        cannotTakePicture = YES;
+    }
+    
     //如果超过24小时，不允许拍照
     overOneDay = NO;
-    BRTMeetingModel *currentMeeting = [[BRTMeetingManager sharedManager] currentMeeting];
-    if (currentMeeting.beginTime) {
-        NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:currentMeeting.beginTime];
-        if (time > 86400) {
-            overOneDay = YES;
-        }
-    }
-    if (overOneDay) {
+//    BRTMeetingModel *currentMeeting = [[BRTMeetingManager sharedManager] currentMeeting];
+//    if (currentMeeting.beginTime) {
+//        NSTimeInterval time = [[NSDate date] timeIntervalSinceDate:currentMeeting.beginTime];
+//        if (time > 86400) {
+//            overOneDay = YES;
+//        }
+//    }
+    if (overOneDay || cannotTakePicture) {
         self.beforeMeetingBtn.cameraButton.enabled = NO;
         self.duringMeetingBtn.cameraButton.enabled = NO;
         self.afterMeetingBtn.cameraButton.enabled = NO;
@@ -156,12 +157,34 @@
 }
 
 - (void)clickBack:(id)sender {
-    if (self.meetingDetail.beforeMeetingImages.count < 1) {
-        [SVProgressHUD showInfoWithStatus:@"全景照片文件夹照片不得少于1张"];
+    BRTMeetingModel *currentMeeting = [[BRTMeetingManager sharedManager] currentMeeting];
+    if ([currentMeeting.meetingState  isEqual: @(InMeetingState)]) {
+        if (self.meetingDetail.beforeMeetingImages.count < 1) {
+            [SVProgressHUD showInfoWithStatus:@"全景照片文件夹照片不得少于1张"];
+            return;
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"确认退出吗？退出后，将无法再对此会议进行任何照片拍摄" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"确定", nil];
+        [alert show];
+        
         return;
     }
     
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        BRTMeetingModel *currentMeeting = [[BRTMeetingManager sharedManager] currentMeeting];
+        if ([currentMeeting.meetingState integerValue] == InMeetingState) {
+            if (currentMeeting.endTime) {
+                currentMeeting.meetingState = @(AfterMeetingState);
+                [[BRTMeetingManager sharedManager] updateValue:@(AfterMeetingState) forKey:kBRTMeetingStateKey withMeetingID:currentMeeting.meetingID];
+            }
+        }
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
